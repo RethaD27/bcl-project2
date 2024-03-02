@@ -13,6 +13,10 @@ function setReminder() {
 
     // Schedule notification
     scheduleNotification(medicationName, reminderTime);
+
+    // Clear input fields
+    document.getElementById('medicationName').value = '';
+    document.getElementById('reminderTime').value = '';
 }
 
 // Function to display reminders from local storage
@@ -23,7 +27,7 @@ function displayReminders() {
 
     reminders.forEach(reminder => {
         const li = document.createElement('li');
-        li.textContent = `${reminder.medicationName} - ${new Date(reminder.reminderTime).toLocaleTimeString()}`;
+        li.textContent = `${reminder.medicationName} - ${new Date(reminder.reminderTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
         remindersList.appendChild(li);
     });
 }
