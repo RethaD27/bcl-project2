@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medication Reminder</title>
+    <title>MediMate</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Medication Reminder</h1>
+        <h1>Never Miss a Dose: Your Personal Medication Assistant</h1>
     </header>
     <main>
         <div id="reminder">
@@ -16,12 +16,14 @@
             <div class="input-group">
                 <label for="medicationName">Medication Name:</label>
                 <input type="text" id="medicationName" required>
+                <div class="error-message" id="medicationNameError"></div>
             </div>
             <div class="input-group">
                 <label for="reminderTime">Reminder Time:</label>
                 <input type="time" id="reminderTime" required>
+                <div class="error-message" id="reminderTimeError"></div>
             </div>
-            <button onclick="setReminder()">Set Reminder</button>
+            <button onclick="validateAndSetReminder()">Set Reminder</button>
         </div>
         <div id="remindersList">
             <h2>Current Reminders</h2>
