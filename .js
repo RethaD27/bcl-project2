@@ -1,4 +1,8 @@
-function validateAndSetReminder() {
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('setReminderBtn').addEventListener('click', validateAndSetReminder);
+});
+
+function validateAndsetReminder() {
     var medicationName = document.getElementById('medicationName').value;
     var reminderTime = document.getElementById('reminderTime').value;
     var medicationNameError = document.getElementById('medicationNameError');
